@@ -1,19 +1,17 @@
-import React from 'react'
-import { 
-  View,
-  TextInput,
+import Validator from 'email-validator';
+import { Formik } from 'formik';
+import React from 'react';
+import {
+  Pressable,
   StyleSheet,
   Text,
+  TextInput,
   TouchableOpacity,
-  Pressable,
- } from 'react-native';
-import { Formik } from 'formik';
+  View,
+} from 'react-native';
 import * as Yup from 'yup';
-import Validator from 'email-validator';
-import { firebase, db } from '../../../firebase';
-import { COLORS, SIZES, assets, FONTS, SHADOWS } from '../../../constants'
-
-
+import { SIZES } from '../../../constants';
+import { db, firebase } from '../../../firebase';
 
 const SignupForm = ({navigation}) => {
   const SignupFormSchema = Yup.object().shape({

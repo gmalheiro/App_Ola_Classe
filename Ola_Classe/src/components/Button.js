@@ -1,7 +1,6 @@
-import { TouchableOpacity, View, Text, Image, StyleSheet, ScrollView, TextInput } from "react-native";
-import { Colors } from "react-native/Libraries/NewAppScreen";
-import { COLORS, SIZES, SHADOWS, FONTS, assets, DarkBlue } from "../../constants";
 import React, { Component } from "react";
+import { Image, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { assets, COLORS, FONTS, SIZES } from "../../constants";
 
 export const CircleButton =({ imgUrl, onPress }) => {
     return (

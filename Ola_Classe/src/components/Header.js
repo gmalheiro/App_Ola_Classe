@@ -1,21 +1,8 @@
-import React from 'react'
-import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native'
-import {firebase} from '../../firebase';
-import { COLORS, SIZES, assets, FONTS, SHADOWS } from '../../constants'
-import Navbar  from '../components/Navbar';
+import React from 'react';
+import { Image, StyleSheet, TouchableOpacity, View } from 'react-native';
+import { assets } from '../../constants';
  
-// const handleSignout = async () => {
-// try {
-//     await firebase.auth().signOut()
-//     console.log('Signed out succesfully!')
-// } catch (error) {
-//     console.log(error)
-//     }
-// }
-// No TouchableOpacity Abaixo 
-// onPress={handleSignout}
-
-const Header = ({navigation}) => {
+const Header = () => {
   return (
 <View>
     <View style={styles.container}>
@@ -25,17 +12,6 @@ const Header = ({navigation}) => {
             source={assets.logo} 
           />
           </TouchableOpacity>
-          {/* <View>
-            <Image 
-            style={{
-                width: 38,
-                height: 38,
-                marginRight: -20,
-                marginTop: -22
-            }} 
-            source={assets.iconSearch}
-            />
-          </View> */}
         </View>
     </View>
   )

@@ -1,11 +1,11 @@
-import { View, Text, TextInput, StyleSheet, Pressable, TouchableOpacity, Alert } from 'react-native'
+import React from 'react';
+import { Alert, Pressable, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { firebase } from '../../../firebase';
-import React, { useState } from 'react'
 
+import Validator from 'email-validator';
 import { Formik } from 'formik';
-import * as Yup from 'yup'
-import  Validator  from 'email-validator';
-import { COLORS, SIZES, assets, FONTS, SHADOWS } from '../../../constants'
+import * as Yup from 'yup';
+import { FONTS, SIZES } from '../../../constants';
 
 
 const LoginForm = ({navigation}) => {
