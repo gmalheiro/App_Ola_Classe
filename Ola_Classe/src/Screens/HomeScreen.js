@@ -1,12 +1,12 @@
-import { assets } from '../../constants';
-import { ScrollView, FlatList, Animated, Image, StyleSheet, Text, TouchableOpacity, View, SafeAreaView, Button } from 'react-native';
-import React, { useRef, useState, useEffect } from 'react';
-import Header from '../components/Header';
 import { useNavigation } from '@react-navigation/native';
+import React, { useEffect, useRef, useState } from 'react';
+import { Animated, FlatList, Image, SafeAreaView, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { assets } from '../../constants';
+import Header from '../components/Header';
+import { IconComment, IconLike, IconWarning } from '../components/IconsCard';
 import { NavBarHome } from '../components/Navbar';
-import { IconLike, IconWarning, IconSave, IconComment }   from '../components/IconsCard';
 
-import { firebase, db } from '../../firebase';
+import { db, firebase } from '../../firebase';
 
 
 const HomeScreen = ({navigation}) => {
