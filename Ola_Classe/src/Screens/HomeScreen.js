@@ -17,6 +17,7 @@ import { IconComment, IconLike, IconWarning } from "../components/IconsCard";
 import { NavBarHome } from "../components/Navbar";
 
 import { db, firebase } from "../../firebase";
+import FloatingMenu from "../components/floatingMenu/FloatingMenu";
 
 const HomeScreen = ({ navigation }) => {
   const [showMenu, setShowMenu] = useState(false);
@@ -112,9 +113,9 @@ const HomeScreen = ({ navigation }) => {
               }}
             >
               <ScrollView style={{ width: "100%", height: "80%" }}>
-                <AshProfile />
-                <GuanabaraProfile />
-                <DeschampsProfile />
+                <AshProfile navigation={navigation} />
+                <GuanabaraProfile navigation={navigation} />
+                <DeschampsProfile navigation={navigation} />
                 <JordanProfile />
 
                 {/* This Text tags are being used to give spacing between the posts ant  the bottom */}
@@ -162,10 +163,7 @@ const Menu = () => {
 
   return (
     <View style={{ top: -50 }}>
-      <AmigosMenuItem />
-      <CategoryMenuItem />
-      <TermsOfUseMenuItem />
-      <AccountSettingsMenuItem />
+      <FloatingMenu />
       <FlatList
         data={data}
         keyExtractor={(item) => item.username}
@@ -241,7 +239,7 @@ const SignoutButton = () => {
   );
 };
 
-const AshProfile = () => {
+const AshProfile = ({ navigation }) => {
   return (
     <View style={styles.center}>
       <View style={[styles.card, styles.elevation, styles.center]}>
@@ -296,7 +294,7 @@ const AshProfile = () => {
   );
 };
 
-const GuanabaraProfile = () => {
+const GuanabaraProfile = ({ navigation }) => {
   return (
     <View
       style={{
@@ -377,7 +375,7 @@ const GuanabaraProfile = () => {
   );
 };
 
-const DeschampsProfile = () => {
+const DeschampsProfile = ({ navigation }) => {
   return (
     <View
       style={{
@@ -510,152 +508,6 @@ const JordanProfile = () => {
         <View></View>
       </View>
     </View>
-  );
-};
-
-const AmigosMenuItem = () => {
-  return (
-    <TouchableOpacity onPress={() => navigation.navigate("FriendsMenu")}>
-      <View
-        style={{
-          flexDirection: "row",
-          alignItems: "center",
-          paddingVertical: 3,
-          paddingLeft: 13,
-          paddingRight: 35,
-          borderRadius: 8,
-          marginTop: -42,
-        }}
-      >
-        <Image
-          source={assets.iconFriends}
-          style={{
-            width: 35,
-            height: 35,
-          }}
-        ></Image>
-
-        <Text
-          style={{
-            fontSize: 17,
-            fontWeight: "bold",
-            paddingLeft: 15,
-          }}
-        >
-          Amigos
-        </Text>
-      </View>
-    </TouchableOpacity>
-  );
-};
-
-const CategoryMenuItem = () => {
-  return (
-    <TouchableOpacity onPress={() => navigation.navigate("CategoryMenu")}>
-      <View
-        style={{
-          flexDirection: "row",
-          alignItems: "center",
-          paddingVertical: 8,
-          paddingLeft: 13,
-          paddingRight: 35,
-          borderRadius: 8,
-          marginTop: 15,
-        }}
-      >
-        <Image
-          source={assets.iconCategory}
-          style={{
-            width: 35,
-            height: 35,
-          }}
-        ></Image>
-
-        <Text
-          style={{
-            fontSize: 17,
-            fontWeight: "bold",
-            paddingLeft: 15,
-          }}
-        >
-          Categoria
-        </Text>
-      </View>
-    </TouchableOpacity>
-  );
-};
-
-const TermsOfUseMenuItem = () => {
-  return (
-    <TouchableOpacity onPress={() => navigation.navigate("TermsUseMenu")}>
-      <View
-        style={{
-          flexDirection: "row",
-          alignItems: "center",
-          paddingVertical: 8,
-          paddingLeft: 13,
-          paddingRight: 35,
-          borderRadius: 8,
-          marginTop: 15,
-        }}
-      >
-        <Image
-          source={assets.iconTermsUse}
-          style={{
-            width: 35,
-            height: 35,
-          }}
-        ></Image>
-
-        <Text
-          style={{
-            fontSize: 17,
-            fontWeight: "bold",
-            paddingLeft: 15,
-          }}
-        >
-          Termos de Uso
-        </Text>
-      </View>
-    </TouchableOpacity>
-  );
-};
-
-const AccountSettingsMenuItem = () => {
-  return (
-    <TouchableOpacity
-      onPress={() => navigation.navigate("AccountSettingsMenu")}
-    >
-      <View
-        style={{
-          flexDirection: "row",
-          alignItems: "center",
-          paddingVertical: 8,
-          paddingLeft: 13,
-          paddingRight: 35,
-          borderRadius: 8,
-          marginTop: 15,
-        }}
-      >
-        <Image
-          source={assets.iconConfig}
-          style={{
-            width: 35,
-            height: 35,
-          }}
-        ></Image>
-
-        <Text
-          style={{
-            fontSize: 17,
-            fontWeight: "bold",
-            paddingLeft: 15,
-          }}
-        >
-          Configuração
-        </Text>
-      </View>
-    </TouchableOpacity>
   );
 };
 
