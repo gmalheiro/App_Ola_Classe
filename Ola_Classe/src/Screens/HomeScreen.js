@@ -18,6 +18,7 @@ import { NavBarHome } from "../components/Navbar";
 
 import { db, firebase } from "../../firebase";
 import FloatingMenu from "../components/floatingMenu/FloatingMenu";
+import Profiles from "../components/profiles/Profiles";
 
 const HomeScreen = ({ navigation }) => {
   const [showMenu, setShowMenu] = useState(false);
@@ -113,6 +114,7 @@ const HomeScreen = ({ navigation }) => {
               }}
             >
               <ScrollView style={{ width: "100%", height: "80%" }}>
+                {/* <Profiles navigation={navigation} /> */}
                 <AshProfile navigation={navigation} />
                 <GuanabaraProfile navigation={navigation} />
                 <DeschampsProfile navigation={navigation} />
